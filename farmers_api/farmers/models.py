@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 class Farmer(models.Model):
     first_name = models.CharField(_('first name'), max_length=50)
     surname = models.CharField(_('surname'), max_length=50)
-    town = models.CharField(_('town'), max_length=50)
+    town = models.CharField(_('town'), max_length=50, db_index=True)
 
     class Meta:
         verbose_name = _('farmer')
