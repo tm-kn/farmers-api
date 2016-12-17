@@ -8,4 +8,4 @@ class FarmerViewSet(viewsets.ModelViewSet):
     queryset = Farmer.objects.all()
     serializer_class = FarmerSerializer
     filter_fields = ('town',)
-    permissions = permissions.DjangoModelPermissionsOrAnonReadOnly
+    permissions = (permissions.DjangoModelPermissionsOrAnonReadOnly,)
