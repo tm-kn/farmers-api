@@ -5,7 +5,7 @@ from django.urls import reverse
 
 from rest_framework.authtoken.models import Token
 from rest_framework import status
-from rest_framework.test import APIRequestFactory, APITestCase
+from rest_framework.test import APITestCase
 
 from .models import Farmer
 from .views import FarmerViewSet
@@ -56,14 +56,10 @@ class FarmerMoTest(TestCase):
 class FarmersAPITest(APITestCase):
 
     def setUp(self):
-        self.factory = APIRequestFactory()
-
         self.superuser = get_user_model().objects.create_superuser(
             'john', 'john@example.com', 'somepassword')
 
         self.superuser_token = Token.objects.create(user=self.superuser)
-
-        # self.client.login(username='john', password='somepassword')
 
         self.data = [
             Farmer(first_name='John', surname='Smith', town='Harrogate'),
