@@ -1,2 +1,1 @@
-WebTest==2.0.24
-django-webtest==1.8.0
+-r base.txt
