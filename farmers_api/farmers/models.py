@@ -18,4 +18,4 @@ class Farmer(models.Model):
         return '%s %s' % (self.first_name, self.surname)
 
     def get_short_name(self):
-        return '%s. %s' % (self.first_name[:1], self_surname)
+        return '%s. %s' % (self.first_name[:1], self.surname)
