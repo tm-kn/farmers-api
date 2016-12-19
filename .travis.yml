@@ -1,0 +1,11 @@
+language: python
+
+python:
+  - "3.5"
+
+env:
+  - DJANGO_SETTINGS_MODULE=config.settings.ci
+
+install: "pip install -r requirements/ci.txt"
+
+script: cd farmers_api && ./manage.py test
